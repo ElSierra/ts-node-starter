@@ -1,8 +1,9 @@
-import Express from "express";
+import * as dotenv from "dotenv";
+dotenv.config();
+import app from "./app";
 
-const app = Express();
-const port = "8080";
+const Port = process.env.PORT || 5500;
 
-app.listen(port || process.env.PORT, () => {
-  console.info("Server Started at", port);
+app.listen(Port, () => {
+  console.log("🚀 Server Started @:", Port);
 });
